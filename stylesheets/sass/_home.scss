@@ -1,0 +1,13 @@
+//---------------------------------------------------
+//  Global Styles
+//---------------------------------------------------
+
+body, html {
+  background: #ffffff;
+}
+
+header.main {
+  background-color: $global_title_bar;
+  height: 30px;
+  width: 100%;
+}

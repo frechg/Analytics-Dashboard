@@ -271,3 +271,10 @@ a:hover {
 
   h2, h3 {
     page-break-after: avoid; } }
+body, html {
+  background: #ffffff; }
+
+header.main {
+  background-color: #4c4c4c;
+  height: 30px;
+  width: 100%; }
