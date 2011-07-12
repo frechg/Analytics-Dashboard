@@ -272,9 +272,85 @@ a:hover {
   h2, h3 {
     page-break-after: avoid; } }
 body, html {
-  background: #ffffff; }
+  background: #4C4C4C; }
 
 header.main {
   background-color: #4c4c4c;
   height: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center; }
+
+time h1 {
+  color: white; }
+
+#wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: strech;
+  -moz-box-align: strech;
+  box-align: strech;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start; }
+
+#history-container {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1; }
+
+#today-container {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1; }
+
+header.sub {
+  background-color: #cccccc;
+  height: 18px;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start; }
+
+.stats-bar {
+  height: 72px;
+  width: 100%;
+  background-color: #e0e0e0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#bfbfbf));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #e0e0e0, #bfbfbf);
+  background-image: -moz-linear-gradient(top, #e0e0e0, #bfbfbf);
+  background-image: -ms-linear-gradient(top, #e0e0e0, #bfbfbf);
+  background-image: -o-linear-gradient(top, #e0e0e0, #bfbfbf);
+  background-image: linear-gradient(top, #e0e0e0, #bfbfbf); }
+
+.graph {
+  background-color: white;
+  height: 138px;
   width: 100%; }

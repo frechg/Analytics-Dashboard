@@ -3,11 +3,63 @@
 //---------------------------------------------------
 
 body, html {
-  background: #ffffff;
+  background: #4C4C4C;
 }
 
 header.main {
-  background-color: $global_title_bar;
+  background-color: $global_color;
   height: 30px;
+  width: 100%;
+  @include display-box;
+  @include box-align(center);
+  @include box-orient(horizontal);
+  @include box-pack(center);
+}
+
+time h1 {
+  color: $time;
+}
+
+#wrapper {
+  display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	@include display-box;
+  @include box-align(strech);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+}
+
+#history-container {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+	box-flex: 1;
+}
+
+#today-container {
+  -webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+}
+
+header.sub {
+  background-color: $sub_title_bar;
+  height: 18px;
+  width: 100%;
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+}
+
+.stats-bar {
+ height: 72px;
+ width: 100%;
+ @include linear-gradient(#e0e0e0, #bfbfbf);
+}
+
+.graph {
+  background-color: white;
+  height: 138px;
   width: 100%;
 }
