@@ -31,31 +31,31 @@ time h1 {
 }
 
 #history-container {
+  margin: 0 20px 0 0;
+  width: 600px;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
 	box-flex: 1;
 }
 
 #today-container {
+  width: 600px;
   -webkit-box-flex: 1;
 	-moz-box-flex: 1;
 	box-flex: 1;
 }
 
 header.sub {
-  background-color: $sub_title_bar;
-  height: 18px;
-  width: 100%;
-  @include display-box;
-  @include box-align(start);
-  @include box-orient(horizontal);
-  @include box-pack(start);
+//  background-color: $sub_title_bar;
+  height: 15px;
+  padding-top: 3px;
+//  width: 100%;
 }
 
 .stats-bar {
   height: 90px;
   width: 100%;
-  @include linear-gradient(#e0e0e0, #bfbfbf);
+  @include linear-gradient(#e6e6e6, #bfbfbf);
   @include display-box;
   @include box-align(start);
   @include box-orient(horizontal);
@@ -63,16 +63,17 @@ header.sub {
 }
 
 div.stats-bar-left {
-  margin: 0 30px 0 0;
+  padding: 0 30px 0 10px;
 }
 
 div.stats-bar-right {
-  margin: 0 0 0 30px;
+  padding-left: 30px;
 }
 
 div.stats{
+  height: 72px;
   @include display-box;
-  @include box-align(start);
+  @include box-align(center);
   @include box-orient(horizontal);
   @include box-pack(start);
 }
@@ -81,5 +82,24 @@ div.stats{
   background-color: white;
   height: 138px;
   width: 100%;
+}
+
+span.icon {
+  margin-right: 10px;
+}
+
+span.indicator {
+  margin: 0 20px;
+}
+
+h2 {
+  color: $current;
+  font-size: 35px;
+}
+
+h3 {
+  color: $goal;
+  font-size: 30px;
+  border-bottom: 2px dashed;
 }
 

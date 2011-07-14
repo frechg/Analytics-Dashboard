@@ -312,43 +312,33 @@ time h1 {
   box-pack: start; }
 
 #history-container {
+  margin: 0 20px 0 0;
+  width: 600px;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1; }
 
 #today-container {
+  width: 600px;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1; }
 
 header.sub {
-  background-color: #cccccc;
-  height: 18px;
-  width: 100%;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  box-align: start;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  box-pack: start; }
+  height: 15px;
+  padding-top: 3px; }
 
 .stats-bar {
   height: 90px;
   width: 100%;
-  background-color: #e0e0e0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#bfbfbf));
+  background-color: #e6e6e6;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#bfbfbf));
   /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #e0e0e0, #bfbfbf);
-  background-image: -moz-linear-gradient(top, #e0e0e0, #bfbfbf);
-  background-image: -ms-linear-gradient(top, #e0e0e0, #bfbfbf);
-  background-image: -o-linear-gradient(top, #e0e0e0, #bfbfbf);
-  background-image: linear-gradient(top, #e0e0e0, #bfbfbf);
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #bfbfbf);
+  background-image: -moz-linear-gradient(top, #e6e6e6, #bfbfbf);
+  background-image: -ms-linear-gradient(top, #e6e6e6, #bfbfbf);
+  background-image: -o-linear-gradient(top, #e6e6e6, #bfbfbf);
+  background-image: linear-gradient(top, #e6e6e6, #bfbfbf);
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -363,18 +353,19 @@ header.sub {
   box-pack: start; }
 
 div.stats-bar-left {
-  margin: 0 30px 0 0; }
+  padding: 0 30px 0 10px; }
 
 div.stats-bar-right {
-  margin: 0 0 0 30px; }
+  padding-left: 30px; }
 
 div.stats {
+  height: 72px;
   display: -webkit-box;
   display: -moz-box;
   display: box;
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  box-align: start;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   box-orient: horizontal;
@@ -386,3 +377,18 @@ div.stats {
   background-color: white;
   height: 138px;
   width: 100%; }
+
+span.icon {
+  margin-right: 10px; }
+
+span.indicator {
+  margin: 0 20px; }
+
+h2 {
+  color: black;
+  font-size: 35px; }
+
+h3 {
+  color: #666666;
+  font-size: 30px;
+  border-bottom: 2px dashed; }
