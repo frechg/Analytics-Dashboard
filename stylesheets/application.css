@@ -311,18 +311,22 @@ time h1 {
   -moz-box-pack: start;
   box-pack: start; }
 
-#history-container {
-  margin: 0 20px 0 0;
-  width: 600px;
+#main-container {
+  min-width: 100%;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1; }
 
-#today-container {
-  width: 600px;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1; }
+#divider {
+  -webkit-box-shadow: inset 3px 0 5px 0 rgba(0, 0, 0, 0.3), inset -3px 0 5px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 3px 0 5px 0 rgba(0, 0, 0, 0.3), inset -3px 0 5px 0 rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 3px 0 5px 0 rgba(0, 0, 0, 0.3), inset -3px 0 5px 0 rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 3px 0 5px 0 rgba(0, 0, 0, 0.3), inset -3px 0 5px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 3px 0 5px 0 rgba(0, 0, 0, 0.3), inset -3px 0 5px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+  width: 24px; }
 
 header.sub {
   height: 15px;
@@ -356,10 +360,11 @@ div.stats-bar-left {
   padding: 0 30px 0 10px; }
 
 div.stats-bar-right {
-  padding-left: 30px; }
+  padding: 0 10px 0 30px; }
 
 div.stats {
   height: 72px;
+  min-width: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: box;
