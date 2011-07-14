@@ -53,9 +53,28 @@ header.sub {
 }
 
 .stats-bar {
- height: 72px;
- width: 100%;
- @include linear-gradient(#e0e0e0, #bfbfbf);
+  height: 90px;
+  width: 100%;
+  @include linear-gradient(#e0e0e0, #bfbfbf);
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+}
+
+div.stats-bar-left {
+  margin: 0 30px 0 0;
+}
+
+div.stats-bar-right {
+  margin: 0 0 0 30px;
+}
+
+div.stats{
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
 }
 
 .graph {
@@ -63,3 +82,4 @@ header.sub {
   height: 138px;
   width: 100%;
 }
+

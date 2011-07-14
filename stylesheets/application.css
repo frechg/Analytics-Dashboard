@@ -339,7 +339,7 @@ header.sub {
   box-pack: start; }
 
 .stats-bar {
-  height: 72px;
+  height: 90px;
   width: 100%;
   background-color: #e0e0e0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#bfbfbf));
@@ -348,7 +348,39 @@ header.sub {
   background-image: -moz-linear-gradient(top, #e0e0e0, #bfbfbf);
   background-image: -ms-linear-gradient(top, #e0e0e0, #bfbfbf);
   background-image: -o-linear-gradient(top, #e0e0e0, #bfbfbf);
-  background-image: linear-gradient(top, #e0e0e0, #bfbfbf); }
+  background-image: linear-gradient(top, #e0e0e0, #bfbfbf);
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start; }
+
+div.stats-bar-left {
+  margin: 0 30px 0 0; }
+
+div.stats-bar-right {
+  margin: 0 0 0 30px; }
+
+div.stats {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start; }
 
 .graph {
   background-color: white;
