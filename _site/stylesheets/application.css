@@ -274,6 +274,14 @@ a:hover {
 body, html {
   background: #4C4C4C; }
 
+h1 {
+  font-family: "AlrightSansLight", verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 100; }
+
+h2, h3, h4, h5 {
+  font-family: "BebasRegular", helvetica, sans-serif; }
+
 header.main {
   background-color: #4c4c4c;
   height: 30px;
@@ -292,7 +300,9 @@ header.main {
   box-pack: center; }
 
 time h1 {
-  color: white; }
+  color: white;
+  font-size: 16px;
+  padding-top: 2px; }
 
 #wrapper {
   display: -webkit-box;
@@ -326,11 +336,12 @@ time h1 {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
+  background-color: #8c8c8c;
   width: 24px; }
 
 header.sub {
   height: 15px;
-  padding-top: 3px; }
+  padding-top: 4px; }
 
 .stats-bar {
   height: 90px;
@@ -357,9 +368,14 @@ header.sub {
   box-pack: start; }
 
 div.stats-bar-left {
+  border-right: 1px solid #8c8c8c;
   padding: 0 30px 0 10px; }
 
+div.stats-bar-left.alone {
+  border-right: none; }
+
 div.stats-bar-right {
+  border-left: 1px solid #f0f0f0;
   padding: 0 10px 0 30px; }
 
 div.stats {
@@ -383,6 +399,14 @@ div.stats {
   height: 138px;
   width: 100%; }
 
+div.triangle {
+  border-color: #bfbfbf transparent transparent transparent;
+  border-style: solid;
+  border-width: 25px 25px 0px 25px;
+  height: 0px;
+  margin-left: 10px;
+  width: 0px; }
+
 span.icon {
   margin-right: 10px; }
 
@@ -391,9 +415,24 @@ span.indicator {
 
 h2 {
   color: black;
-  font-size: 35px; }
+  font-size: 40px;
+  text-shadow: 0px 1px 0 white; }
 
 h3 {
   color: #666666;
+  font-size: 40px; }
+
+h3.dash {
+  border-bottom: 2px dashed;
+  color: #666666;
+  font-size: 34px;
+  margin-bottom: 4px; }
+
+h4 {
+  color: black;
   font-size: 30px;
-  border-bottom: 2px dashed; }
+  text-shadow: 0px 1px 0 white; }
+
+h4.goal {
+  color: #666666;
+  text-shadow: none; }
