@@ -363,18 +363,7 @@ header.main {
       font-size: 12px; }
   .stats-bar div.stats-bar-left {
     border-right: 1px solid #8c8c8c;
-    padding: 0 30px 0 10px;
-    /*
-    div.progress-indicator {
-      background: $progress;
-      @include background-image(linear-gradient(hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 100%, 1) 35%, transparent 35%));
-      @include border-radius(2px);
-      @include box-shadow(inset 0px 1px 1px 0 rgba(0,0,0,0.4), 0px 1px 0 0 rgba(255,255,255,0.3)); 
-      height: 50px;
-      margin: 0 20px 2px 20px;
-      width: 20px;
-    }
-    */ }
+    padding: 0 30px 0 10px; }
     .stats-bar div.stats-bar-left div.progress-indicator {
       background: white;
       -webkit-border-radius: 2px;
@@ -410,7 +399,7 @@ header.main {
         background-image: -ms-linear-gradient(top, #61bddf 10%, #3aadd8 100%);
         background-image: -o-linear-gradient(top, #61bddf 10%, #3aadd8 100%);
         background-image: top, #61bddf 10%, #3aadd8 100%;
-        height: 50%;
+        height: 75%;
         overflow: hidden;
         position: absolute;
         width: 18px; }
@@ -465,7 +454,8 @@ header.main {
       font-size: 40px;
       text-shadow: 0px 1px 0 white; }
     .stats-bar div.stats h2.goal {
-      color: #666666; }
+      color: #666666;
+      text-shadow: none; }
     .stats-bar div.stats h2.dash {
       border-bottom: 2px dashed;
       font-size: 35px; }
