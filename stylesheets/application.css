@@ -218,16 +218,16 @@ a:hover {
 .invisible {
   visibility: hidden; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, #wrapper:before, .clearfix:after, #wrapper:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden; }
 
-.clearfix:after {
+.clearfix:after, #wrapper:after {
   clear: both; }
 
-.clearfix {
+.clearfix, #wrapper {
   zoom: 1; }
 
 @media screen and (max-device-width: 480px) {
@@ -273,16 +273,44 @@ a:hover {
   h2, h3 {
     page-break-after: avoid; } }
 body, html {
-  background: #000; }
+  background: black; }
+
+#wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: strech;
+  -moz-box-align: strech;
+  box-align: strech;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 0 auto; }
+  #wrapper #main-container {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    min-width: 100%; }
+  #wrapper #divider {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    box-flex: 0;
+    width: 24px; }
 
 h1 {
   font-family: "AlrightSansLight", verdana, sans-serif;
-  font-size: 12px;
   font-weight: 100; }
 
-h2, h3, h4, h5 {
+h2, h3 {
   font-family: "BebasRegular", helvetica, sans-serif;
+  font-weight: 100;
   line-height: 1em; }
+
+body {
+  color: black; }
 
 header.main {
   background-color: #4c4c4c;
@@ -300,50 +328,10 @@ header.main {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   box-pack: center; }
-
-footer {
-  background-color: #4c4c4c;
-  height: 15px;
-  width: 100%; }
-
-time h1 {
-  color: white;
-  font-size: 16px;
-  padding-top: 2px; }
-
-#wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-align: strech;
-  -moz-box-align: strech;
-  box-align: strech;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  box-pack: start; }
-
-#main-container {
-  min-width: 100%;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1; }
-
-#divider {
-  -webkit-box-flex: 0;
-  -moz-box-flex: 0;
-  box-flex: 0;
-  background-color: black;
-  width: 24px; }
-
-header.sub {
-  height: 15px;
-  padding-top: 3px; }
+  header.main time h1 {
+    color: white;
+    font-size: 16px;
+    padding-top: 2px; }
 
 .stats-bar {
   height: 90px;
@@ -368,111 +356,140 @@ header.sub {
   -webkit-box-pack: start;
   -moz-box-pack: start;
   box-pack: start; }
+  .stats-bar header.sub {
+    height: 15px;
+    padding-top: 3px; }
+    .stats-bar header.sub h1 {
+      font-size: 12px; }
+  .stats-bar div.stats-bar-left {
+    border-right: 1px solid #8c8c8c;
+    padding: 0 30px 0 10px;
+    /*
+    div.progress-indicator {
+      background: $progress;
+      @include background-image(linear-gradient(hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 100%, 1) 35%, transparent 35%));
+      @include border-radius(2px);
+      @include box-shadow(inset 0px 1px 1px 0 rgba(0,0,0,0.4), 0px 1px 0 0 rgba(255,255,255,0.3)); 
+      height: 50px;
+      margin: 0 20px 2px 20px;
+      width: 20px;
+    }
+    */ }
+    .stats-bar div.stats-bar-left div.progress-indicator {
+      background: white;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      -o-border-radius: 2px;
+      border-radius: 2px;
+      -webkit-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.5), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
+      -moz-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.5), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
+      -ms-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.5), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
+      -o-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.5), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.5), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
+      height: 50px;
+      margin: 0 20px 2px 20px;
+      overflow: hidden;
+      position: relative;
+      width: 20px; }
+      .stats-bar div.stats-bar-left div.progress-indicator div.progress-fill {
+        background-color: #3aadd8;
+        -webkit-border-radius: 0 0 2px 2px;
+        -moz-border-radius: 0 0 2px 2px;
+        -ms-border-radius: 0 0 2px 2px;
+        -o-border-radius: 0 0 2px 2px;
+        border-radius: 0 0 2px 2px;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        bottom: 0;
+        background-color: #61bddf;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#61bddf 10%), to(#3aadd8 100%));
+        /* Saf4+, Chrome */
+        background-image: -webkit-linear-gradient(top, #61bddf 10%, #3aadd8 100%);
+        background-image: -moz-linear-gradient(top, #61bddf 10%, #3aadd8 100%);
+        background-image: -ms-linear-gradient(top, #61bddf 10%, #3aadd8 100%);
+        background-image: -o-linear-gradient(top, #61bddf 10%, #3aadd8 100%);
+        background-image: top, #61bddf 10%, #3aadd8 100%;
+        height: 50%;
+        overflow: hidden;
+        position: absolute;
+        width: 18px; }
+  .stats-bar div.stats-bar-left.alone {
+    border-right: none; }
+  .stats-bar div.stats-bar-right {
+    border-left: 1px solid #f0f0f0;
+    padding: 0 10px 0 30px; }
+    .stats-bar div.stats-bar-right span.arrow-up {
+      background: url(/images/arrow_indicator.png) no-repeat;
+      background-position: 0px -30px;
+      display: block;
+      height: 30px;
+      margin: 0 20px;
+      width: 20px; }
+    .stats-bar div.stats-bar-right span.arrow-down {
+      background: url(/images/arrow_indicator.png) no-repeat;
+      background-position: 0px 0px;
+      display: block;
+      height: 30px;
+      margin: 0 20px;
+      width: 20px; }
+  .stats-bar div.stats {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;
+    height: 72px;
+    min-width: 100%; }
+    .stats-bar div.stats div.icon {
+      margin-right: 10px; }
+    .stats-bar div.stats #visits-icon {
+      background: url("/images/visits_icon.png") no-repeat top center;
+      height: 35px;
+      margin-bottom: 4px;
+      width: 35px; }
+    .stats-bar div.stats #orders-icon {
+      background: url("/images/orders_icon.png") no-repeat top center;
+      height: 30px;
+      margin-bottom: 1px;
+      width: 36px; }
+    .stats-bar div.stats h2 {
+      color: black;
+      font-size: 40px;
+      text-shadow: 0px 1px 0 white; }
+    .stats-bar div.stats h2.goal {
+      color: #666666; }
+    .stats-bar div.stats h2.dash {
+      border-bottom: 2px dashed;
+      font-size: 35px; }
+    .stats-bar div.stats h3 {
+      color: black;
+      font-size: 30px;
+      text-shadow: 0px 1px 0 white; }
+    .stats-bar div.stats h3.goal {
+      color: #666666;
+      text-shadow: none; }
 
-div.stats-bar-left {
-  border-right: 1px solid #8c8c8c;
-  padding: 0 30px 0 10px; }
-
-div.stats-bar-left.alone {
-  border-right: none; }
-
-div.stats-bar-right {
-  border-left: 1px solid #f0f0f0;
-  padding: 0 10px 0 30px; }
-
-div.stats {
-  height: 72px;
-  min-width: 100%;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  box-pack: start; }
-
-.graph {
-  background-color: white;
+div.graph {
+  background-color: #ffffff;
   height: 138px;
   width: 100%; }
+  div.graph div.triangle {
+    border-color: #bfbfbf transparent transparent transparent;
+    border-style: solid;
+    border-width: 25px 25px 0px 25px;
+    height: 0px;
+    margin-left: 10px;
+    width: 0px; }
 
-div.triangle {
-  border-color: #bfbfbf transparent transparent transparent;
-  border-style: solid;
-  border-width: 25px 25px 0px 25px;
-  height: 0px;
-  margin-left: 10px;
-  width: 0px; }
-
-div.icon {
-  margin-right: 10px; }
-
-#visits-icon {
-  background: url("/images/visits_icon.png") no-repeat top center;
-  height: 35px;
-  margin-bottom: 6px;
-  width: 35px; }
-
-#orders-icon {
-  background: url("/images/orders_icon.png") no-repeat top center;
-  height: 30px;
-  margin-bottom: 3px;
-  width: 36px; }
-
-span.arrow-indicator {
-  background: url(/images/arrow_indicator.png) no-repeat;
-  background-position: 0px -30px;
-  display: block;
-  height: 30px;
-  margin: 0 20px;
-  width: 20px; }
-
-div.progress-indicator {
-  background: #3aadd8;
-  background-image: -webkit-linear-gradient(white 0%, white 30%, transparent 30%);
-  background-image: -moz-linear-gradient(white 0%, white 30%, transparent 30%);
-  background-image: -ms-linear-gradient(white 0%, white 30%, transparent 30%);
-  background-image: -o-linear-gradient(white 0%, white 30%, transparent 30%);
-  background-image: white 0%, white 30%, transparent 30%;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.4), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
-  -moz-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.4), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
-  -ms-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.4), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
-  -o-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.4), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.4), 0px 1px 0 0 rgba(255, 255, 255, 0.3);
-  height: 50px;
-  margin: 0 20px 2px 20px;
-  width: 20px; }
-
-h2 {
-  color: black;
-  font-size: 40px;
-  text-shadow: 0px 1px 0 white; }
-
-h3 {
-  color: #666666;
-  font-size: 40px; }
-
-h3.dash {
-  border-bottom: 2px dashed;
-  color: #666666;
-  font-size: 34px;
-  margin-bottom: 4px; }
-
-h4 {
-  color: black;
-  font-size: 30px;
-  text-shadow: 0px 1px 0 white; }
-
-h4.goal {
-  color: #666666;
-  text-shadow: none; }
+footer {
+  background-color: #4c4c4c;
+  height: 15px;
+  width: 100%; }

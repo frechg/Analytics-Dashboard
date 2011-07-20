@@ -2,14 +2,17 @@
 //  Variables
 //---------------------------------------------------
 
-$global_color: #4C4C4C;
-$time: #ffffff;
-$sub_title_bar: #cccccc;
-$current: #000000;
-$goal: #666666;
+//Background Colors:
+$primary: #000000;
+$frame_color: #4C4C4C;
+$progress: #3aadd8;
+$success: #3ad879;
 
+//Fonts:
 $data-font: 'BebasRegular', helvetica, sans-serif;
 $title-font: 'AlrightSansLight', verdana, sans-serif;
 
-$progress: #3aadd8;
-$success: green;
+//Font Colors:
+$time: #ffffff;
+$current: #000000;
+$goal: #666666;

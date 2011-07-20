@@ -3,72 +3,71 @@
 //---------------------------------------------------
 
 body, html {
-  background: #000;
+  background: $primary;
+}
+
+#wrapper {
+  @extend .clearfix;
+	@include display-box;
+  @include box-align(strech);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+  margin: 0 auto;
+  
+  #main-container {
+  @include box-flex(1);
+  min-width: 100%;
+  }
+
+  #divider {
+  @include box-flex(0);
+  width: 24px;
+  }
+  
 }
 
 h1 {
-  font-family: $title-font;
-  font-size: 12px;
-  font-weight: 100;
+  font: {
+    family: $title-font;
+    weight: 100;
+  }
 }
 
-h2, h3, h4, h5 {
-  font-family: $data-font;
+h2, h3 {
+  font: {
+    family: $data-font;
+    weight: 100;
+  }
   line-height: 1em;
 }
 
+//---------------------------------------------------
+//  Site Structure and Style
+//---------------------------------------------------
+
+body {
+  color: $primary;
+}
+
 header.main {
-  background-color: $global_color;
+  background-color: $frame_color;
   height: 30px;
   width: 100%;
   @include display-box;
   @include box-align(center);
   @include box-orient(horizontal);
   @include box-pack(center);
+  
+  time h1 {
+    color: $time;
+    font-size: 16px;
+    padding-top: 2px;
+  }
 }
 
-footer {
-  background-color: $global_color;
-  height: 15px;
-  width: 100%;
-}
-
-time h1 {
-  color: $time;
-  font-size: 16px;
-  padding-top: 2px;
-}
-
-#wrapper {
-  display: -webkit-box;
-	display: -moz-box;
-	display: box;
-	@include display-box;
-  @include box-align(strech);
-  @include box-orient(horizontal);
-  @include box-pack(start);
-}
-
-#main-container {
-  min-width: 100%;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-	box-flex: 1;
-}
-
-#divider {
-  //@include box-shadow(inset 3px 0 5px 0 rgba(0,0,0,0.3), inset -3px 0 5px 0 rgba(0,0,0,0.3));
-  -webkit-box-flex: 0;
-  -moz-box-flex: 0;
-	box-flex: 0;
-	background-color: rgb(0,0,0);
-  width: 24px;
-}
-
-header.sub {
-  height: 15px;
-  padding-top: 3px;
-}
+//---------------------------------------------------
+//  Stats Section
+//---------------------------------------------------
 
 .stats-bar {
   height: 90px;
@@ -78,109 +77,168 @@ header.sub {
   @include box-align(start);
   @include box-orient(horizontal);
   @include box-pack(start);
+  
+  header.sub {
+    height: 15px;
+    padding-top: 3px;
+  
+    h1 {
+      font-size: 12px;
+    }
+  }
+  
+  div.stats-bar-left {
+    border-right: 1px solid rgb(140,140,140);
+    padding: 0 30px 0 10px;
+    
+    /*
+    div.progress-indicator {
+      background: $progress;
+      @include background-image(linear-gradient(hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 100%, 1) 35%, transparent 35%));
+      @include border-radius(2px);
+      @include box-shadow(inset 0px 1px 1px 0 rgba(0,0,0,0.4), 0px 1px 0 0 rgba(255,255,255,0.3)); 
+      height: 50px;
+      margin: 0 20px 2px 20px;
+      width: 20px;
+    }
+    */
+    div.progress-indicator {
+      background: hsla(0, 100%, 100%, 1);
+      @include border-radius(2px);
+      @include box-shadow(inset 0px 1px 1px 0 hsla(0, 0, 0, 0.5), 0px 1px 0 0 hsla(0, 100%, 100%, 0.3));
+      height: 50px;
+      //border: 1px solid hsla(0, 0, 0, 0.15);
+      margin: 0 20px 2px 20px;
+      overflow: hidden;
+      position: relative;
+      width: 20px;
+
+      div.progress-fill {
+        background-color: $progress;
+        @include border-radius(0 0 2px 2px);
+        border: {
+          left: 1px solid hsla(0, 0, 0, 0.1);
+          right: 1px solid hsla(0, 0, 0, 0.1);
+        }
+        bottom: 0;
+        @include linear-gradient(tint($progress, 20%) 10%, $progress 100%);
+        height: 50%;
+        overflow: hidden;
+        position: absolute;
+        width: 18px;
+      }
+    }
+  }
+  
+  div.stats-bar-left.alone {
+    border-right: none;
+  }
+  
+  div.stats-bar-right {
+    border-left: 1px solid rgb(240,240,240);
+    padding: 0 10px 0 30px;
+    
+    span.arrow-up {
+      background: url(/images/arrow_indicator.png) no-repeat;
+      background-position: 0px -30px;
+      display: block;
+      height: 30px;
+      margin: 0 20px;
+      width: 20px;
+    }
+
+    span.arrow-down {
+      background: url(/images/arrow_indicator.png) no-repeat;
+      background-position: 0px 0px;
+      display: block;
+      height: 30px;
+      margin: 0 20px;
+      width: 20px;
+    }
+  }
+  
+  div.stats{
+    @include display-box;
+    @include box-align(center);
+    @include box-orient(horizontal);
+    @include box-pack(start);
+    height: 72px;
+    min-width: 100%;
+    
+    div.icon {
+      margin-right: 10px;
+    }
+    
+    #visits-icon {
+      background: url('/images/visits_icon.png') no-repeat top center;
+      height: 35px;
+      margin-bottom: 4px;
+      width: 35px;
+    }
+  
+    #orders-icon {
+      background: url('/images/orders_icon.png') no-repeat top center;
+      height: 30px;
+      margin-bottom: 1px;
+      width: 36px;
+    }
+    
+    h2 {
+      color: $current;
+      font-size: 40px;
+      text-shadow: 0px 1px 0 rgba(255,255,255,1);
+    }
+    
+    h2.goal {
+      color: $goal;
+    }
+    
+    h2.dash {
+      border-bottom: 2px dashed;
+      font-size: 35px;
+    }
+    
+    h3 {
+      color: $current;
+      font-size: 30px;
+      text-shadow: 0px 1px 0 rgba(255,255,255,1);
+    }
+
+    h3.goal {
+      color: $goal;
+      text-shadow: none;
+    }
+  }
 }
 
-div.stats-bar-left {
-  border-right: 1px solid rgb(140,140,140);
-  padding: 0 30px 0 10px;
-}
+//---------------------------------------------------
+//  Graph
+//---------------------------------------------------
 
-div.stats-bar-left.alone {
-  border-right: none;
-}
-
-div.stats-bar-right {
-  border-left: 1px solid rgb(240,240,240);
-  padding: 0 10px 0 30px;
-}
-
-div.stats{
-  height: 72px;
-  min-width: 100%;
-  @include display-box;
-  @include box-align(center);
-  @include box-orient(horizontal);
-  @include box-pack(start);
-}
-
-.graph {
-  background-color: white;
+div.graph {
+  background-color: #ffffff;
   height: 138px;
   width: 100%;
+  
+  div.triangle {
+    border: {
+      color: #bfbfbf transparent transparent transparent;
+      style: solid;
+      width: 25px 25px 0px 25px;
+    }
+    height: 0px;
+    margin-left: 10px;
+    width: 0px;
+  }
 }
 
-div.triangle {
-  border-color: #bfbfbf transparent transparent transparent;
-  border-style: solid;
-  border-width: 25px 25px 0px 25px;
-  height: 0px;
-  margin-left: 10px;
-  width: 0px;
-}
+//---------------------------------------------------
+//  Footer
+//---------------------------------------------------
 
-div.icon {
-  margin-right: 10px;
-}
-
-#visits-icon {
-  background: url('/images/visits_icon.png') no-repeat top center;
-  height: 35px;
-  margin-bottom: 6px;
-  width: 35px;
-}
-
-#orders-icon {
-  background: url('/images/orders_icon.png') no-repeat top center;
-  height: 30px;
-  margin-bottom: 3px;
-  width: 36px;
-}
-
-span.arrow-indicator {
-  background: url(/images/arrow_indicator.png) no-repeat;
-  background-position: 0px -30px;
-  display: block;
-  height: 30px;
-  margin: 0 20px;
-  width: 20px;
-}
-
-div.progress-indicator {
-  background: $progress;
-  @include background-image(linear-gradient(hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 100%, 1) 30%, transparent 30%));
-  @include border-radius(2px);
-  @include box-shadow(inset 0px 1px 1px 0 rgba(0,0,0,0.4), 0px 1px 0 0 rgba(255,255,255,0.3)); 
-  height: 50px;
-  margin: 0 20px 2px 20px;
-  width: 20px;
-}
-
-h2 {
-  color: $current;
-  font-size: 40px;
-  text-shadow: 0px 1px 0 rgba(255,255,255,1);
-}
-
-h3 {
-  color: $goal;
-  font-size: 40px;
-}
-
-h3.dash {
-  border-bottom: 2px dashed;
-  color: $goal;
-  font-size: 34px;
-  margin-bottom: 4px;
-}
-
-h4 {
-  color: $current;
-  font-size: 30px;
-  text-shadow: 0px 1px 0 rgba(255,255,255,1);
-}
-
-h4.goal {
-  color: $goal;
-  text-shadow: none;
+footer {
+  background-color: $frame_color;
+  height: 15px;
+  width: 100%;
 }
 
